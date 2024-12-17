@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%230058ff%22></rect><path fill=%22%23fff%22 d=%22M72.15 21.33L72.15 21.33Q74.49 22.50 74.90 25.02Q75.30 27.54 73.59 29.61L73.59 29.61Q72.42 31.23 70.58 31.41Q68.73 31.59 66.84 30.69L66.84 30.69Q64.68 29.70 62.30 29.16Q59.91 28.62 57.30 28.62L57.30 28.62Q52.44 28.62 48.62 30.15Q44.79 31.68 42.09 34.52Q39.39 37.35 38.00 41.22Q36.60 45.09 36.60 49.77L36.60 49.77Q36.60 55.26 38.18 59.31Q39.75 63.36 42.54 66.06Q45.33 68.76 49.11 70.07Q52.89 71.37 57.30 71.37L57.30 71.37Q59.73 71.37 62.16 70.92Q64.59 70.47 66.84 69.30L66.84 69.30Q68.73 68.40 70.58 68.67Q72.42 68.94 73.68 70.56L73.68 70.56Q75.48 72.81 74.99 75.20Q74.49 77.58 72.24 78.66L72.24 78.66Q69.90 79.83 67.43 80.60Q64.95 81.36 62.43 81.77Q59.91 82.17 57.30 82.17L57.30 82.17Q50.82 82.17 45.02 80.10Q39.21 78.03 34.67 73.98Q30.12 69.93 27.51 63.86Q24.90 57.78 24.90 49.77L24.90 49.77Q24.90 42.84 27.29 36.99Q29.67 31.14 34.04 26.87Q38.40 22.59 44.34 20.21Q50.28 17.82 57.30 17.82L57.30 17.82Q61.26 17.82 65.04 18.72Q68.82 19.62 72.15 21.33Z%22></path></svg>" />
+<meta charset="UTF-8">
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+<!-- CSS Stylesheets -->
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+<title>Weather Forecast Project</title>
+</head>
+
+<body class="flex h-screen flex-col bg-blue-700 text-white items-center justify-center leading-loose">
+    <div class="text-center">
+        <h1 class="flex justify-center items-center text-4xl text-yellow-500 uppercase font-sans font-bold shadow-2xl">EuroSky</h1>
+        
+        <h1 class="flex justify-center items-center text-2xl uppercase font-bold">European Weather Forecast</h1>
+        
+        <div class="flex justify-center items-center text-italic lowercase">
+            Powered by
+            <a href="https://www.7timer.info/doc.php?lang=en" target="_blank" class="ml-2">
+                <button class="mt-2 px-2 py-2 bg-gray-100 rounded text-gray-600">
+                    7timer
+                </button>
+            </a>
+        </div>
+
+        <div class="flex justify-center items-center mt-4">
+            
+            <select id="city" class="px-2 py-1 rounded text-gray-800">
+                <label for="city" class="mr-2">-- Select City: --</label>
+                <option value='{"lat":"52.367","lon":"4.904"}'>Amsterdam, Netherlands</option>
+                <option value='{"lat":"39.933","lon":"32.859"}'>Ankara, Turkey</option>
+                <option value='{"lat":"56.134","lon":"12.945"}'>Åstorp, Sweden</option>
+                <option value='{"lat":"37.983","lon":"23.727"}'>Athens, Greece</option>
+                <option value='{"lat":"54.597","lon":"-5.930"}'>Belfast, Northern Ireland, UK</option>
+                <option value='{"lat":"41.387","lon":"2.168"}'>Barcelona, Spain</option>
+                <option value='{"lat":"52.520","lon":"13.405"}'>Berlin, Germany</option>
+                <option value='{"lat":"46.948","lon":"7.447"}'>Bern, Switzerland</option>
+                <option value='{"lat":"43.263","lon":"-2.935"}'>Bilbao, Basque Country, Spain</option>
+                <option value='{"lat":"50.847","lon":"4.357"}'>Brussels, Belgium</option>
+                <option value='{"lat":"47.497","lon":"19.040"}'>Bucharest, Romania</option>
+                <option value='{"lat":"59.329","lon":"18.068"}'>Budapest, Hungary</option>
+                <option value='{"lat":"51.483","lon":"-3.168"}'>Cardiff, Wales, UK</option>
+                <option value='{"lat":"50.937","lon":"6.96"}'>Cologne, Germany</option>
+                <option value='{"lat":"55.676","lon":"12.568"}'>Copenhagen, Denmark</option>
+                <option value='{"lat":"51.898","lon":"-8.475"}'>Cork, Ireland</option>
+                <option value='{"lat":"53.349","lon":"-6.260"}'>Dublin, Ireland</option>
+                <option value='{"lat":"55.953","lon":"-3.188"}'>Edinburgh, Scotland, UK</option>
+                <option value='{"lat":"43.7696","lon":"11.255"}'>Florence, Italy</option>
+                <option value='{"lat":"50.110","lon":"8.682"}'>Frankfurt, Germany</option>        
+                <option value='{"lat":"43.254","lon":"6.637"}'>French Riviera, France</option>
+                <option value='{"lat":"32.650","lon":"-16.908"}'>Funchal, Madeira, Portugual</option>
+                <option value='{"lat":"36.140","lon":"-5.353"}'>Gibraltar, British Territory</option>   
+                <option value='{"lat":"57.708","lon":"11.974"}'>Gothenburg, Sweden</option>     
+                <option value='{"lat":"53.548","lon":"9.987"}'>Hamburg, Germany</option>
+                <option value='{"lat":"60.169","lon":"24.938"}'>Helsinki, Finland</option>
+                <option value='{"lat":"39.020","lon":"1.482"}'>Ibiza, Spain</option>
+                <option value='{"lat":"50.450","lon":"30.523"}'>Kyiv, Ukraine</option>
+                <option value='{"lat":"61.115","lon":"10.466"}'>Lillehammer, Norway</option>
+                <option value='{"lat":"38.722","lon":"-9.139"}'>Lisbon, Portugual</option>
+                <option value='{"lat":"51.507","lon":"-0.127"}'>London, England, UK</option>        
+                <option value='{"lat":"40.416","lon":"-3.703"}'>Madrid, Spain</option>
+                <option value='{"lat":"39.695","lon":"3.017"}'>Mallorca, Spain</option>
+                <option value='{"lat":"53.480","lon":"-2.242"}'>Manchester, England, UK</option>        
+                <option value='{"lat":"43.296","lon":"5.369"}'>Marseille, France</option>
+                <option value='{"lat":"27.760","lon":"-15.586"}'>Maspalomas, Gran Canaria, Spain</option>
+                <option value='{"lat":"45.464","lon":"9.190"}'>Milan, Italy</option>
+                <option value='{"lat":"48.135","lon":"11.582"}'>Munich, Germany</option>
+                <option value='{"lat":"40.851","lon":"14.268"}'>Naples, Italy</option>
+                <option value='{"lat":"43.034","lon":"-2.417"}'>Oñati, Basque Country, Spain</option>
+                <option value='{"lat":"59.913","lon":"10.752"}'>Oslo, Norway</option>
+                <option value='{"lat":"48.856","lon":"2.352"}'>Paris, France</option>
+                <option value='{"lat":"50.075","lon":"14.437"}'>Prague, Czech Republic</option>
+                <option value='{"lat":"64.146","lon":"-21.942"}'>Reykjavík, Iceland</option>
+                <option value='{"lat":"56.879","lon":"24.603"}'>Riga, Latvia</option>
+                <option value='{"lat":"41.902","lon":"12.496"}'>Rome, Italy</option>
+                <option value='{"lat":"39.453","lon":"-31.127"}'>Santa Cruz das Flores, Azores, Portugual</option>
+                <option value='{"lat":"28.463","lon":"-16.251"}'>Santa Cruz de Tenerife, Tenerife, Spain</option>
+                <option value='{"lat":"57.273","lon":"-6.215"}'>Skye, Scotland, UK</option>
+                <option value='{"lat":"42.697","lon":"23.321"}'>Sofia, Bulgaria</option>
+                <option value='{"lat":"59.329","lon":"18.068"}'>Stockholm, Sweden</option>
+                <option value='{"lat":"59.437","lon":"24.753"}'>Tallinn, Estonia</option>
+                <option value='{"lat":"18.208","lon":"16.373"}'>Vienna, Austria</option>
+                <option value='{"lat":"52.229","lon":"21.012"}'>Warsaw, Poland</option>
+                <option value='{"lat":"53.961","lon":"-1.07"}'>York, England, UK</option>
+                <option value='{"lat":"47.376","lon":"8.541"}'>Zurich, Switzerland</option>
+            </select>
+        </div>
+    </div>
+    <div id="results" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4 w-full px-6"></div>
+
+</body>
+
+<footer>
+    <p class="copyright-text">© Copyright 2024 EuroSky</p>
+</footer>
+
+<!-- Our codes -->
+<script src="js/main.js"></script>
