@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ts: "Thunderstorm",
       };
   
-      return weatherMap[weather.replace(/night/g, " ").trim().toLowerCase()] || weather;
+      return weatherMap[weather.replace(/night/g||/day/g, " ").trim().toLowerCase()] || weather;
     }
   });
   
